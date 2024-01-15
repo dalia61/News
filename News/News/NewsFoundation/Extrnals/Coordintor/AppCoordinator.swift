@@ -28,7 +28,7 @@ final class AppCoordinator {
 private extension AppCoordinator {
     func displayNewsFlow() {
         let navigationController = UINavigationController()
-        let coordinator = OnboardingCoordinator(navigationController: navigationController)
+        let coordinator = onboardingCoordinator(navigationController: navigationController)
         coordinator.start()
         children.append(coordinator)
         replaceRootViewController(navigationController)

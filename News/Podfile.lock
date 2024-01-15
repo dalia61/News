@@ -1,0 +1,44 @@
+PODS:
+  - Alamofire (5.7.1)
+  - Kingfisher (7.9.0)
+  - Realm (10.45.1):
+    - Realm/Headers (= 10.45.1)
+  - Realm/Headers (10.45.1)
+  - RealmSwift (10.45.1):
+    - Realm (= 10.45.1)
+  - RxCocoa (6.6.0):
+    - RxRelay (= 6.6.0)
+    - RxSwift (= 6.6.0)
+  - RxRelay (6.6.0):
+    - RxSwift (= 6.6.0)
+  - RxSwift (6.6.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - Kingfisher
+  - RealmSwift
+  - RxCocoa (~> 6.0)
+  - RxSwift (~> 6.0)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Kingfisher
+    - Realm
+    - RealmSwift
+    - RxCocoa
+    - RxRelay
+    - RxSwift
+
+SPEC CHECKSUMS:
+  Alamofire: 0123a34370cb170936ae79a8df46cc62b2edeb88
+  Kingfisher: 59f908b6d2f403b0a3e539debb0eec05cb27002c
+  Realm: e0bee0f167c0165312d80cb0def019fdb6a26be8
+  RealmSwift: 2a92c510fee3dace3e0ad809c2f10c6a6a4b65d5
+  RxCocoa: 44a80de90e25b739b5aeaae3c8c371a32e3343cc
+  RxRelay: 45eaa5db8ee4fb50e5ebd57deec0159e97fa51e6
+  RxSwift: a4b44f7d24599f674deebd1818eab82e58410632
+
+PODFILE CHECKSUM: 689183beaef09952c22f4b0b49ade06b63895427
+
+COCOAPODS: 1.12.1

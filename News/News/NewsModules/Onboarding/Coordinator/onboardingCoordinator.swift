@@ -5,28 +5,29 @@
 //  Created by Dalia on 13/01/2024.
 //
 
-import Foundation
 import UIKit
 
-protocol OnboardingCoordinatorProtocol: AnyObject {
+protocol onboardingCoordinatorProtocol: AnyObject {
     func navigateToLogin()
 }
 
-final class OnboardingCoordinator: Coordinator {
+final class onboardingCoordinator: Coordinator {
     let navigationController: UINavigationController
+    
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
+    
     func start() {
-        let onBoardingViewModel = onboardingViewModel()
-        let onBoardingViewControoler = onboardingViewController()
-        navigationController.setViewControllers([onBoardingViewControoler], animated: false)
+        let onboardingViewModel = onboardingViewModel(coordinator: self)
+        let onboardingViewController = onboardingViewController()
+        navigationController.setViewControllers([onboardingViewController], animated: false)
     }
 }
 
-extension OnboardingCoordinator: OnboardingCoordinatorProtocol {
+extension onboardingCoordinator: onboardingCoordinatorProtocol {
     func navigateToLogin() {
-        //let loginCoordinator = LoginCoordinator(navigationController: navigationController)
-        //loginCoordinator.start()
+        // let loginCoordinator = LoginCoordinator(navigationController: navigationController)
+        // loginCoordinator.start()
     }
 }
