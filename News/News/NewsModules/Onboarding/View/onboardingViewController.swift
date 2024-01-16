@@ -13,11 +13,15 @@ class onboardingViewController: UIViewController {
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
     var viewModel: onboardingViewModel!
-    var pages = [
-        Page(image: "NewsImage1", title: "Stay Informed, Anytime, Anywhere", description: "Welcome to our news app, your go-to source for breaking news, exclusive stories, and a personalized content experience."),
-        Page(image: "NewsImage2", title: "Be a Knowledgeable Global Citizen", description: "Unlock a tailor-made news experience that aligns with your interests and preferences. Your news, your way!"),
-        Page(image: "NewsImage3", title: "Elevate Your News Experience Now!", description: "Join our vibrant community of news enthusiasts. Share your thoughts, and engage in meaningful discussions.")
-    ]
+    
+    init(viewModel: onboardingViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: "onboardingViewController", bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +37,7 @@ class onboardingViewController: UIViewController {
     
     func loadPages(pages: [Page]?) {
         guard let pages = pages else { return }
-        self.pages = pages
+        self.viewModel.pages = pages
         DispatchQueue.main.async {
             self.onboardingCollectionView.reloadData()
         }
@@ -42,18 +46,17 @@ class onboardingViewController: UIViewController {
 }
 
 extension onboardingViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return pages.count
+        return viewModel.pages.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "onboardingCollectionViewCell", for: indexPath) as! onboardingCollectionViewCell
-        let page = pages[indexPath.item]
+        let page = viewModel.pages[indexPath.item]
         let cellModel = onboardingCollectionViewCellModel(page: page)
         cell.configure(with: cellModel)
         return cell

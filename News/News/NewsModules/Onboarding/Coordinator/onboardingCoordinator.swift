@@ -20,7 +20,7 @@ final class onboardingCoordinator: Coordinator {
     
     func start() {
         let onboardingViewModel = onboardingViewModel(coordinator: self)
-        let onboardingViewController = onboardingViewController()
+        let onboardingViewController = onboardingViewController(viewModel: onboardingViewModel)
         navigationController.setViewControllers([onboardingViewController], animated: false)
     }
 }

@@ -18,8 +18,4 @@ class onboardingCollectionViewCellModel {
         self.description = page.description
         self.image = page.image
     }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
 }
