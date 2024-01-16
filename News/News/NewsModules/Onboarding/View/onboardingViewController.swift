@@ -13,27 +13,32 @@ class onboardingViewController: UIViewController {
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
     var viewModel: onboardingViewModel!
+    var pages = [
+        Page(image: "NewsImage1", title: "Stay Informed, Anytime, Anywhere", description: "Welcome to our news app, your go-to source for breaking news, exclusive stories, and a personalized content experience."),
+        Page(image: "NewsImage2", title: "Be a Knowledgeable Global Citizen", description: "Unlock a tailor-made news experience that aligns with your interests and preferences. Your news, your way!"),
+        Page(image: "NewsImage3", title: "Elevate Your News Experience Now!", description: "Join our vibrant community of news enthusiasts. Share your thoughts, and engage in meaningful discussions.")
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCollectionView()
-        onboardingCollectionView.register(onboardingCollectionViewCell.self, forCellWithReuseIdentifier: "onboardingCollectionViewCell")
     }
     
     func configureCollectionView() {
         onboardingCollectionView.dataSource = self
         onboardingCollectionView.delegate = self
         onboardingCollectionView.backgroundColor = .white
-        onboardingCollectionView.register(onboardingCollectionViewCell.self, forCellWithReuseIdentifier: "OnboardingCollectionViewCell")
+        onboardingCollectionView.register(onboardingCollectionViewCell.self)
     }
     
     func loadPages(pages: [Page]?) {
         guard let pages = pages else { return }
-        self.viewModel.pages = pages
+        self.pages = pages
         DispatchQueue.main.async {
             self.onboardingCollectionView.reloadData()
         }
     }
+    
 }
 
 extension onboardingViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -43,15 +48,15 @@ extension onboardingViewController: UICollectionViewDataSource, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.pages.count
+        return pages.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "onboardingCollectionViewCell", for: indexPath) as! onboardingCollectionViewCell
-                let page = viewModel.pages[indexPath.item]
-                let cellModel = onboardingCollectionViewCellModel(page: page)
-                cell.configure(with: cellModel)
-                return cell
+        let page = pages[indexPath.item]
+        let cellModel = onboardingCollectionViewCellModel(page: page)
+        cell.configure(with: cellModel)
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout:
