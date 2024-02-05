@@ -24,10 +24,12 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="WYr-nY-dZI" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="CNk-ff-jW1"/>
-                            <constraint firstAttribute="bottom" secondItem="WYr-nY-dZI" secondAttribute="bottom" id="Hf4-lH-GKl"/>
-                            <constraint firstItem="WYr-nY-dZI" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailing" id="M38-ij-sTm"/>
-                            <constraint firstItem="WYr-nY-dZI" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="POd-dy-HHw"/>
+                            <constraint firstItem="WYr-nY-dZI" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="EBS-WV-eW7"/>
+                            <constraint firstItem="WYr-nY-dZI" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="Qb8-e6-Ld0"/>
+                            <constraint firstAttribute="trailing" secondItem="WYr-nY-dZI" secondAttribute="trailing" id="V0S-mW-1Dn"/>
+                            <constraint firstItem="WYr-nY-dZI" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="cxP-Up-UL4"/>
+                            <constraint firstAttribute="bottom" secondItem="WYr-nY-dZI" secondAttribute="bottom" id="pWG-Lo-0jj"/>
+                            <constraint firstItem="WYr-nY-dZI" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="ufS-HX-Be2"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -37,7 +39,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Newsline" width="341.33334350585938" height="341.33334350585938"/>
+        <image name="Newsline" width="375" height="375"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
